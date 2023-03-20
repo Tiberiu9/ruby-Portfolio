@@ -6,6 +6,17 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+3.times do |topic|
+  Topic.create!(
+    title: "Topic #{topic}",
+  )
+end
+
+puts "3 Topics created"
+
+
+
+
 10.times do |blog|
   Blog.create!(
     title: "My Blog Post #{blog}",
@@ -17,7 +28,9 @@
       impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
       Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae
       sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores
-      alias consequatur aut perferendis doloribus asperiores repellat.'
+      alias consequatur aut perferendis doloribus asperiores repellat.',
+      topic_id: Topic.last.id,
+
   )
 end
 
@@ -32,10 +45,26 @@ end
 
 puts '10 skills created'
 
-9.times do |porfolio_item|
+8.times do |porfolio_item|
   Portfolio.create!(
     title: "Portfolio #{porfolio_item}",
-    subtitle: 'My great service',
+    subtitle: 'Ruby on Rails',
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eros a felis rutrum,
+          eleifend feugiat erat pellentesque. Nulla congue imperdiet ante, quis egestas orci aliquet et.
+          Ut vulputate sapien eu eros rutrum maximus. Mauris nisl enim, ullamcorper et elementum nec,
+          ullamcorper sit amet tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          ullamcorper arcu non leo finibus, at vulputate arcu varius. Duis non sapien efficitur,
+          pulvinar magna ac, posuere sem. In laoreet lorem quis leo cursus, at aliquet ligula tincidunt.
+          Proin scelerisque tellus ac sapien pretium rhoncus.",
+    main_image: 'https://place-hold.it/600x400',
+    thumb_image: 'https://place-hold.it/300x200'
+  )
+end
+
+2.times do |porfolio_item|
+  Portfolio.create!(
+    title: "Portfolio #{porfolio_item}",
+    subtitle: 'Angular',
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eros a felis rutrum,
           eleifend feugiat erat pellentesque. Nulla congue imperdiet ante, quis egestas orci aliquet et.
           Ut vulputate sapien eu eros rutrum maximus. Mauris nisl enim, ullamcorper et elementum nec,
