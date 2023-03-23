@@ -8,14 +8,11 @@
 
 3.times do |topic|
   Topic.create!(
-    title: "Topic #{topic}",
+    title: "Topic #{topic}"
   )
 end
 
-puts "3 Topics created"
-
-
-
+puts '3 Topics created'
 
 10.times do |blog|
   Blog.create!(
@@ -29,8 +26,7 @@ puts "3 Topics created"
       Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae
       sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores
       alias consequatur aut perferendis doloribus asperiores repellat.',
-      topic_id: Topic.last.id,
-
+    topic_id: Topic.last.id
   )
 end
 
@@ -78,3 +74,11 @@ end
 end
 
 puts '9 portfolio items created'
+
+3.times do |technology|
+  Portfolio.last.technologies.create!(
+    name: "Technology #{technology}"
+  )
+end
+
+puts '3 technologies items created'
